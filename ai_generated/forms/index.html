@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soldier Registration Form</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a, #262626);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      color: #fff;
+    }
+
+    .form-container {
+      background: linear-gradient(145deg, #111, #222);
+      width: 90%;
+      max-width: 850px;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 150, 0.3);
+      border: 1px solid #0f0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ff9d;
+      font-size: 28px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px #00ff9d;
+    }
+
+    fieldset {
+      border: 2px solid #00ff9d;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      padding: 20px;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 18px;
+      color: #00ff9d;
+      text-shadow: 0 0 6px #00ff9d;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #555;
+      background: #111;
+      color: #00ff9d;
+      box-sizing: border-box;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #00ff9d;
+      box-shadow: 0 0 10px #00ff9d;
+      outline: none;
+    }
+
+    .inline {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #00ff9d, #00cc66);
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #00cc66, #00ff9d);
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Soldier Registration
+         <form action="https://Microsoft.com">
+
+    <form action="#" method="post">
+
+      <!-- Soldier Info -->
+      <fieldset>
+        <legend>Soldier Information</legend>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" value="Samira Said Ali" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" value="samira.said@example.com">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="Samira1234">
+
+        <label for="rank">Rank:</label>
+        <select id="rank" name="rank" required>
+          <option selected>Captain</option>
+          <option>Private</option>
+          <option>Corporal</option>
+          <option>Sergeant</option>
+          <option>Lieutenant</option>
+          <option>Major</option>
+        </select>
+
+        <label>Gender:</label>
+        <div class="inline">
+          <input type="radio" name="gender" value="female" id="female" checked>
+          <label for="female">Female</label>
+        </div>
+        <div class="inline">
+          <input type="radio" name="gender" value="male" id="male">
+          <label for="male">Male</label>
+        </div>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" value="1998-05-12">
+
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" value="+254700123456">
+
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" name="photo">
+
+        <label for="color">Favorite Color (for tag):</label>
+        <input type="color" id="color" name="color" value="#00ff9d">
+      </fieldset>
+
+      <!-- Equipment Info -->
+      <fieldset>
+        <legend>Equipment Details</legend>
+        <label for="weapon">Weapon Type:</label>
+        <input type="text" id="weapon" name="weapon" value="Rifle M16" required>
+
+        <label for="serial">Weapon Serial Number:</label>
+        <input type="text" id="serial" name="serial" value="SN-987654321">
+
+        <label for="uniform">Uniform Size:</label>
+        <select id="uniform" name="uniform">
+          <option selected>Medium</option>
+          <option>Small</option>
+          <option>Large</option>
+          <option>XL</option>
+        </select>
+
+        <label>Equipment Possessed:</label>
+        <div class="inline">
+          <input type="checkbox" id="helmet" name="equipment" value="helmet" checked>
+          <label for="helmet">Helmet</label>
+        </div>
+        <div class="inline">
+          <input type="checkbox" id="vest" name="equipment" value="vest" checked>
+          <label for="vest">Vest</label>
+        </div>
+        <div class="inline">
+          <input type="checkbox" id="boots" name="equipment" value="boots" checked>
+          <label for="boots">Boots</label>
+        </div>
+        <div class="inline">
+          <input type="checkbox" id="belt" name="equipment" value="belt">
+          <label for="belt">Belt</label>
+        </div>
+
+        <label for="experience">Years of Service:</label>
+        <input type="number" id="experience" name="experience" value="5" min="0" max="40">
+
+        <label for="strength">Fitness Level:</label>
+        <input type="range" id="strength" name="strength" min="1" max="10" value="8">
+
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes" rows="3">Samira is a disciplined soldier with outstanding field performance and leadership qualities.</textarea>
+      </fieldset>
+
+      <!-- Submit -->
+      <button type="submit" class="btn">Register Soldier</button>
+    </form>
+  </div>
+</body>
+</html>
