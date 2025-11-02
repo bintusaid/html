@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Semantic HTML — Simple Website</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.4}
+    body{margin:0;padding:20px;background:#f6f8fa;color:#0b1720}
+    header,footer,nav,main,article,section,aside{display:block}
+    header{background:#0b72b5;color:white;padding:16px;border-radius:8px}
+    nav ul{display:flex;gap:10px;list-style:none;padding:0;margin:8px 0}
+    nav a{color:white;text-decoration:none;padding:6px 10px;border-radius:6px;background:rgba(255,255,255,0.07)}
+    .container{max-width:980px;margin:18px auto}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+    article, aside{background:white;padding:14px;border-radius:8px;box-shadow:0 6px 18px rgba(11,23,32,0.06)}
+    footer{margin-top:18px;padding:10px;text-align:center;color:#334}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid #e6eef6;padding:8px;text-align:left}
+    figure{margin:0}
+    code{background:#f4f6f8;padding:2px 6px;border-radius:4px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace}
+    pre{background:#0b172525;padding:10px;border-radius:6px;overflow:auto}
+    .controls{display:flex;gap:8px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Semantic HTML — Simple Website</h1>
+      <p>A tiny demo that includes common semantic elements.</p>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="hero">
+    <section aria-labelledby="welcome">
+      <h2 id="welcome">Welcome</h2>
+      <p>This page shows many <mark>HTML5 semantic elements</mark> with simple example content.</p>
+      <p>Current time: <time datetime="2025-11-01T16:00:00+03:00">November 1, 2025 — 16:00 (Nairobi)</time>.</p>
+    </section>
+
+    <div class="grid">
+      <article>
+        <header>
+          <h3>Article: Building Blocks</h3>
+          <p>By <address><a href="mailto:samira@example.com">Samira Said</a></address></p>
+        </header>
+
+        <section aria-labelledby="sec-overview">
+          <h4 id="sec-overview">Overview</h4>
+          <p>Articles contain <strong>sections</strong>, <em>figures</em>, lists and more.</p>
+          <figure>
+            <img src="https://via.placeholder.com/600x200.png?text=Semantic+HTML" alt="Placeholder: Semantic HTML" width="100%" />
+            <figcaption>Figure: Example image with <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code>.</figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="sec-lists">
+          <h4 id="sec-lists">Lists & Table</h4>
+          <p>Ordered, unordered and definition lists:</p>
+          <ol>
+            <li>Header elements</li>
+            <li>Navigation</li>
+            <li>Main content and articles</li>
+          </ol>
+          <ul>
+            <li>&lt;aside&gt; for tangential content</li>
+            <li>&lt;footer&gt; for page footer</li>
+          </ul>
+
+          <dl>
+            <dt>&lt;figure&gt;</dt>
+            <dd>Groups media with caption.</dd>
+            <dt>&lt;address&gt;</dt>
+            <dd>Contact info or author address.</dd>
+          </dl>
+
+          <p>Small data table:</p>
+          <table>
+            <caption>Team summary</caption>
+            <colgroup>
+              <col style="width:20%">
+              <col>
+              <col style="width:30%">
+            </colgroup>
+            <thead>
+              <tr><th>#</th><th>Name</th><th>Role</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Samira</td><td>Teacher</td></tr>
+              <tr><td>2</td><td>Ali</td><td>Student</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="3">2 members</td></tr>
+            </tfoot>
+          </table>
+        </section>
+
+        <section aria-labelledby="sec-interactive">
+          <h4 id="sec-interactive">Interactive elements</h4>
+          <p>Examples of semantic interactive elements:</p>
+          <div class="controls">
+            <details>
+              <summary>Settings</summary>
+              <p>Toggleable details content. Useful for progressive disclosure.</p>
+            </details>
+
+            <form id="sample-form" onsubmit="event.preventDefault();document.getElementById('out').textContent='Submitted!';">
+              <fieldset>
+                <legend>Contact</legend>
+                <label for="name">Name: <input id="name" name="name" required></label>
+                <label for="email">Email: <input id="email" name="email" type="email"></label>
+                <button type="submit">Send</button>
+              </fieldset>
+            </form>
+
+            <meter min="0" max="100" value="64">64%</meter>
+            <progress value="32" max="100">32%</progress>
+
+            <output id="out">No submission yet</output>
+          </div>
+        </section>
+
+        <section aria-labelledby="sec-code">
+          <h4 id="sec-code">Code & Quotation</h4>
+          <p>Inline code: <code>&lt;main&gt;</code>. Keyboard input example: <kbd>Ctrl</kbd>+<kbd>S</kbd>.</p>
+          <blockquote>
+            <p>Semantic HTML helps accessibility and structure.</p>
+            <footer>— Web Author</footer>
+          </blockquote>
+          <pre><code>/* small example */
+body { margin: 0 }
+</code></pre>
+        </section>
+      </article>
+
+      <aside>
+        <h4>Aside (Related)</h4>
+        <p>Short notes, links, or ads belong here.</p>
+        <nav aria-label="Related links">
+          <ul>
+            <li><a href="#sec-overview">Overview</a></li>
+            <li><a href="#sec-lists">Lists</a></li>
+            <li><a href="#sec-interactive">Interactive</a></li>
+          </ul>
+        </nav>
+
+        <section>
+          <h5>Small media</h5>
+          <figure>
+            <picture>
+              <source srcset="https://via.placeholder.com/300x100.webp" type="image/webp">
+              <img src="https://via.placeholder.com/300x100.png" alt="Small placeholder" style="width:100%">
+            </picture>
+            <figcaption>Responsive picture element</figcaption>
+          </figure>
+
+          <p>Audio & video (controls):</p>
+          <audio controls src="" aria-label="sample audio">Your browser does not support audio.</audio>
+          <video controls width="100%" playsinline></video>
+        </section>
+      </aside>
+    </div>
+
+    <section id="features">
+      <h3>Other semantic elements</h3>
+      <p>Below are smaller, more specialized semantic elements:</p>
+      <p><samp>Sample output</samp> — <var>x</var> — <data value="42">42</data></p>
+
+      <details>
+        <summary>Hidden template example</summary>
+        <p>This content is shown only when expanded.</p>
+      </details>
+
+      <template id="tmpl">
+        <p>Template content that doesn't render until used by script.</p>
+      </template>
+    </section>
+
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>If you'd like changes, edit this file or ask me to customize fields, styles, or content.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 — Semantic HTML Demo. <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // small script to show template usage (keeps page semantic even with script)
+    (function(){
+      const t = document.getElementById('tmpl');
+      if(t){
+        const clone = t.content.cloneNode(true);
+        document.getElementById('contact').appendChild(clone);
+      }
+    })();
+  </script>
+</body>
+</html>
